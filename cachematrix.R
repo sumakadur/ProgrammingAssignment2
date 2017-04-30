@@ -55,3 +55,35 @@ cacheSolve <- function(x, ...) {
   x$setinverse(m)
   m
 }
+
+
+
+
+## Sample runs
+## > m <- makeCacheMatrix()
+## > m$set(matrix(c(0,2,2,0),2,2))
+## > m$get()
+## [,1] [,2]
+## [1,]    0    2
+## [2,]    2    0
+## > cacheSolve(m)
+## [,1] [,2]
+## [1,]  0.0  0.5
+## [2,]  0.5  0.0
+## > cacheSolve(m)
+## getting already cached matrix
+## [,1] [,2]
+## [1,]  0.0  0.5
+## [2,]  0.5  0.0
+## > m$set(matrix(c(0,4,2,0),2,2))
+## > cacheSolve(m)
+## [,1] [,2]
+## [1,]  0.0 0.25
+## [2,]  0.5 0.00
+## > cacheSolve(m)
+## getting already cached matrix
+## [,1] [,2]
+## [1,]  0.0 0.25
+## [2,]  0.5 0.00
+
+
